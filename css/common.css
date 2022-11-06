@@ -24,12 +24,14 @@ button {
 }
 
 .image {
-  width: 340px;
+  width: 320px;
 }
 
 .gallery {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
   padding: 0;
   
 }
