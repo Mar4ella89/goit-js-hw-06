@@ -18,15 +18,15 @@ const createBoxes = (amount) => {
   amount = inputNumberEl.valueAsNumber;
   let boxWidth = 30;
   let boxHeight = 30;
-  
+
   for (let i = 0; i < amount; i += 1) {
-    const newBox = `<div style='background-color:${getRandomHexColor()}; color:red; width:${boxWidth}px;
+    const newBox = `<div style='background-color:${getRandomHexColor()}; width:${boxWidth}px;
   height:${boxHeight}px;'></div>`;
     boxEl.insertAdjacentHTML("beforeend", newBox);
     boxWidth += 10;
     boxHeight += 10;
   }
-  console.log(boxWidth)
+  console.log(boxWidth);
 };
 
 btnCreateEl.addEventListener("click", createBoxes);
