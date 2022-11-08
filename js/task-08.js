@@ -1,17 +1,26 @@
-const loginFofmEl = document.querySelector('.login-form')
+const loginFofmEl = document.querySelector(".login-form");
 
 const onFormSubmit = (event) => {
-event.preventDefault();
+  event.preventDefault();
 
-const {
-    elements: { email, password }
+  const {} = event.currentTarget;
+
+  const {
+    elements: { email, password },
   } = event.currentTarget;
 
   if (email.value === "" || password.value === "") {
     return alert("Please fill in all the fields!");
   }
-  console.log(`Email: ${email.value}, Password: ${password.value}`);
-  event.currentTarget.reset();
-}
 
-loginFofmEl.addEventListener('submit', onFormSubmit)
+  const formData = new FormData(event.currentTarget);
+  const inputData = {};
+  formData.forEach((value, name) => {
+    inputData[name] = value;
+  });
+  console.log(inputData);
+
+  event.currentTarget.reset();
+};
+
+loginFofmEl.addEventListener("submit", onFormSubmit);
